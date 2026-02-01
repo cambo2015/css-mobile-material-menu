@@ -1,0 +1,103 @@
+
+
+:root{
+    --spacing: 2em;
+    
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+i{
+    background: inherit;
+}
+
+.menu-container{
+    display:flex;
+    flex-direction: column;
+    gap:var(--spacing);
+    position:fixed;
+    bottom:0;
+    right:0;
+    padding:var(--spacing);
+    background: green;
+}
+
+#m-menu-button{
+    display: flex;
+    justify-content: baseline;
+    align-items: baseline;
+}
+
+.circle-button{
+    width:calc(2 * var(--spacing));
+    height:calc(2 * var(--spacing));
+    border-radius:50%;
+    background-color: white;
+    border: none;
+}
+
+/* hide behind + button */
+.menu-container > :nth-child(1){
+   
+    position:absolute !important;
+    bottom:0 !important;
+    right:0 !important;
+    margin:var(--spacing);
+    z-index: -1;
+    transition: transform 0.3s ease-in-out;
+}
+.menu-container > :nth-child(2){
+   
+    position:absolute !important;
+    bottom:0 !important;
+    right:0 !important;
+    margin:var(--spacing);
+    z-index: -1;
+    transition: transform 0.3s ease-in-out;
+}
+.menu-container > :nth-child(3){
+   
+    position:absolute !important;
+    bottom:0 !important;
+    right:0 !important;
+    margin:var(--spacing);
+    z-index: -1;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* show them with button container is clicked */
+.open.menu-container > :nth-child(1){
+    transform: translateY(-120%);
+    transition: transform 0.3s ease-in-out;
+}
+.open.menu-container > :nth-child(2){
+    transform: translateY(-240%);
+    transition: transform 0.3s ease-in-out;
+}
+.open.menu-container > :nth-child(3){
+    transform: translateY(-360%);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* hover effects */
+.menu-container > .circle-button:nth-child(1):hover{
+    background-color: var(--bs-primary);
+    color: white !important;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    
+}
+.menu-container > .circle-button:nth-child(2):hover{
+    background-color: var(--bs-danger);
+    color: white !important;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    
+}
+
+.menu-container > .circle-button:nth-child(3):hover{
+    background-color: var(--bs-success);
+    color: white !important;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
